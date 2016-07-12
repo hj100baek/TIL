@@ -37,7 +37,7 @@ GROUP BY t01.department_id;
 DEPARTMENT_ID	  job_ids	            job_ids_distinct
 ------ ------------------------------------------------------------
 20	            MK_REP                  MK_REP
-50	            ST_CLERK; ST_CLERK	  ST_CLERK
-60                IT_PROG            	 IT_PROG
-80	            SA_MAN; SA_REP	      SA_MAN; SA_REP
+50	            ST_CLERK; ST_CLERK	    ST_CLERK
+60              IT_PROG            	    IT_PROG
+80	            SA_MAN; SA_REP	        SA_MAN; SA_REP
 ```

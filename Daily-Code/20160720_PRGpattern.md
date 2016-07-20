@@ -1,0 +1,3 @@
+- PRG pattern
+  - Post-Redirect-Get Pattern 
+  - 새로고침이나 버튼 중복 클릭등으로 중복 submit를 방지하기 위한 web development design pattern 

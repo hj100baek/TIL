@@ -1,4 +1,4 @@
-## Java8 사용 이유 
+## Java8 사용 이유
  - 코드 간결성
  - First Class Function 지원
   + 함수 자체를 파라미터로 넘긴다.
@@ -17,7 +17,7 @@
   + Consumer
 
   ```java
-  Consumer<String> print = (value) ->
+  Consumer<String> print = (value) -> System.out.println(value);
 
   print.accept("Hello");
   ```

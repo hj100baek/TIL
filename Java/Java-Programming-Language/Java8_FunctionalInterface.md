@@ -11,6 +11,19 @@ interface FunctionTest<T1, T2, T3, R> {
 }
 ```
 
+- 일반 type이 정해진 method 예제
+
+```java
+@FunctionalInterface
+interface BigDecimalToCurrency {
+ String toCurrency(BigDecimal value);
+}
+
+//사용 시
+BigDecimalToCurrency bigDecimalToCurrency = bd -> "$" + bd.toString();
+System.out.println(bigDecimalToCurrency.toCurrency(new BigDecimal("100.00")));
+```
+
 - Generic method는 abstract method로 사용하지 못한다.
 
 ```java
@@ -25,4 +38,16 @@ InvalidFunction invalidFunction = value -> value.toString();
 
 System.out.println(invalidFunction.makeString());
 
+```
+
+- Functional interface 활용예제
+
+```java
+private static <T> BigDecimal total(List<T> list, Function<T, BigDecimal> mapper) {
+ BigDecimal total = BigDecimal.ZERO;
+ for (final T t : list) {
+   total = total.add(mapper.apply(t)) ;
+ }
+ return total;
+}
 ```

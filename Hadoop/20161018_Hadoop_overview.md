@@ -12,3 +12,7 @@
  + Hadoop Compoments
   ###### HDFS - Storage
   ###### MapReduce - Processing
+
+
+- Big Data ?
+ + 한대의 컴퓨터로는 저장하거나 연산하기 어려운 규모의 거대 데이터

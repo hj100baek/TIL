@@ -15,8 +15,9 @@
   ###### MapReduce - Processing
 
  + Edge nodes 
-   are the interface between the Hadoop cluster and the outside network. 
-   as gateway nodes.
+   are the interface between the Hadoop cluster and the outside network.  
+   as gateway nodes. 
+   edge nodes are used to run client applications and cluster administration tools.
 
 - Big Data ?
  + 한대의 컴퓨터로는 저장하거나 연산하기 어려운 규모의 거대 데이터

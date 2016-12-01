@@ -11,7 +11,7 @@
    </dependency>
   ```
   
-  - datasource.xml
+ - datasource.xml
   
     ```xml
     <!-- Mybatis log4j -->

@@ -15,13 +15,13 @@
   
     ```xml
     <!-- Mybatis log4j -->
-     <bean id="dataSource" class="net.sf.log4jdbc.Log4jdbcProxyDataSource">
-        <constructor-arg ref="dataSourceOrigin" />
-        <property name="logFormatter">
-            <bean class="net.sf.log4jdbc.tools.Log4JdbcCustomFormatter">
-                <!-- <property name="loggingType" value="MULTI_LINE" />  --><!-- 여러줄에 출력하려고 하시면 코멘트 해제 -->
-                <property name="sqlPrefix" value="SQL         :  "/>
-            </bean>
-        </property>
-    </bean>
+     <bean id="dataSourceLog" class="net.sf.log4jdbc.Log4jdbcProxyDataSource">
+	    <constructor-arg ref="dataSource" />
+	    <property name="logFormatter">
+	        <bean class="net.sf.log4jdbc.tools.Log4JdbcCustomFormatter">
+	            <!-- <property name="loggingType" value="MULTI_LINE" />  --><!-- 여러줄에 출력하려고 하시면 코멘트 해제 -->
+	            <property name="sqlPrefix" value="SQL         :  "/>
+	        </bean>
+	    </property>
+	</bean>
     ```

@@ -28,3 +28,12 @@
 	    </property>
 	</bean>
     ```
+    
+ - log4j.xml
+ 
+     ```xml
+      <logger name="jdbc.sqltiming" additivity="false">
+        <level value="info"/>
+        <appender-ref ref="console"/>
+     </logger>
+     ```

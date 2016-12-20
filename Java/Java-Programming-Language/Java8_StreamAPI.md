@@ -22,3 +22,8 @@ Stream.of(1, 2, 3, 4, 5)
  //output
  //Functional Result: Optional[12]
  ```
+
+- Intermediate Operation method
+ + ex) filter , map
+- Terminal Operation method
+ + ex) findFirst

@@ -1,6 +1,7 @@
 ### The try-with-resources Statement
 
    Q: 리소스를 가진 try문?
+   
     +  AutoCloseable or Closeable interfaces 를 구현한 경우만 try resource로 사용될 수 있음
     +   try resource를 사용할 경우는 finally없어도 Statement가 끝나면 자동으로 resources를 close해준다.
 

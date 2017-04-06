@@ -1,4 +1,5 @@
 ```java
+//String addDaysResult = addDays("20170406",1,"yyyyMMdd");
 public static String addDays(String sDate, int day, String format) {
  
   SimpleDateFormat formatter = new SimpleDateFormat(format, java.util.Locale.KOREA);    

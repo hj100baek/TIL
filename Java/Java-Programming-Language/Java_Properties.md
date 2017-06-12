@@ -1,3 +1,4 @@
+```java
 import java.io.IOException;
 import java.util.Properties;
 
@@ -25,7 +26,7 @@ public class MainTest {
 	}
 
 }
-
+```
 #result
 test.home2=> r2.txt
 test.home1=> r1.txt

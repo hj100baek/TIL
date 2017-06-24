@@ -27,6 +27,7 @@ public class MainTest {
 
 }
 ```
+<pre><code>
 #result
 test.home2=> r2.txt
 test.home1=> r1.txt
@@ -35,3 +36,4 @@ null
 #project.properties file
 test.home1=r1.txt
 test.home2=r2.txt
+</code></pre>

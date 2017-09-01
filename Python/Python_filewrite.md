@@ -11,13 +11,16 @@ def fwrite1GBtxt(argSavePath, argFileName):
 
     print("Complete :" + completeName)
 
-def fwriteSeek1GBtxt(argSavePath, argFileName):
+def fwriteSeekGBtxt(argSavePath, argFileName, argSizeType='1GB'):
     savePath = argSavePath
     filename = argFileName
     GB = 1024*1024*1024 # 1GB
     completeName = os.path.join(savePath, filename+".txt")
     fout = open(completeName, 'wb')
-    fout.seek(GB - 1)
+    if(argSizeType == '10GB'):
+        fout.seek((GB * 10) - 1)
+    else:
+        fout.seek(GB - 1)
     fout.write(b'\0')
 
     print("Complete :" + completeName)
@@ -26,7 +29,10 @@ def fwriteSeek1GBtxt(argSavePath, argFileName):
 for i in range(1, 10):
    fwrite1GBtxt('D:/temps/','largeFile'+str(i))
    
-for i in range(10, 20):
-   fwriteSeek1GBtxt('D:/temps/','largeFile'+str(i))
+for i in range(10, 15):
+   fwriteSeekGBtxt('D:/temps/','largeFile'+str(i), '10GB')
+   
+for i in range(15, 21):
+   fwriteSeekGBtxt('D:/temps/','largeFile'+str(i), '1GB')
    
 ```

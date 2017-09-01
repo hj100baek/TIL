@@ -17,7 +17,7 @@ def fwriteSeek1GBtxt(argSavePath, argFileName):
     GB = 1024*1024*1024 # 1GB
     completeName = os.path.join(savePath, filename+".txt")
     fout = open(completeName, 'wb')
-    fout.seek((GB * 10) - 1)
+    fout.seek(GB - 1)
     fout.write(b'\0')
 
     print("Complete :" + completeName)

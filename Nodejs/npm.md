@@ -2,13 +2,13 @@
 
 Node Package Manager
 
-* uglify-js : JavaScript minifier
+## uglify-js : JavaScript minifier
 
-### install
+#### install
 
  npm install uglify-js -g
 
-### Command line usage
+#### Command line usage
 
  uglifyjs pretty.js -o pretty.min.js -m
 

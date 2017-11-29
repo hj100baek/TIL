@@ -2,6 +2,9 @@
 
 Node Package Manager
 
+### create package.json command
+npm init
+
 ## uglify-js : JavaScript minifier
 
 #### install

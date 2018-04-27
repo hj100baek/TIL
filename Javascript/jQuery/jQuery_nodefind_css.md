@@ -1,6 +1,6 @@
 #### 찾은 노드의 css 변경 예제
 
-```javascript
+```html
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html charset="UTF-8">

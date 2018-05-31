@@ -29,6 +29,11 @@ idRegex = re.compile(r'''(
     id=\"([a-zA-Z0-9._%+-]+)\"       #id="xxx"
     )''', re.VERBOSE)
 
+
+labelRegex = re.compile(r'''(
+    label=\"([가-힣a-zA-Z0-9._%+-]+)\"       #label="한글xxx"
+    )''', re.VERBOSE)
+
 # Create camel regex
 camelRegex = re.compile(r'''(
     ([a-zA-Z0-9]+)      
@@ -68,7 +73,9 @@ matches = []
 
 for groups in idRegex.findall(text):
     matches.append(convertUnderbar2(groups[0])+'\t\t\t\t\t\t'+groups[0])
-    
+
+for groups in labelRegex.findall(text):
+    matches.append(groups[0])    
 
 # Copy results to the clipboard.
 if len(matches) > 0 :
@@ -79,6 +86,5 @@ if len(matches) > 0 :
 else:
     print('Not found.')
     
-
 
 ```

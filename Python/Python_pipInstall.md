@@ -9,3 +9,8 @@ ED] certificate verify failed (_ssl.c:777)'),)': /simple/jupyter/
 solution: 
 pip install --trusted-host pypi.python.org jupyter
 ```
+
+```
+pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org openpyx
+pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org openpyx
+```

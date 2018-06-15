@@ -31,7 +31,7 @@ idRegex = re.compile(r'''(
 
 
 labelRegex = re.compile(r'''(
-    label=\"([가-힣a-zA-Z0-9._%+-]+)\"       #label="한글xxx"
+    name=\"([a-zA-Z]|[가-힣a-zA-Z0-9._%+-;]+)\"       #label="한글xxx"
     )''', re.VERBOSE)
 
 # Create camel regex
@@ -40,12 +40,30 @@ camelRegex = re.compile(r'''(
     ([A-Z][a-z0-9]+)      
     )''', re.VERBOSE)
 
+# Create camel regex
+camelRegex2 = re.compile(r'''(
+    ([a-z0-9]+)      
+    ([A-Z]{1}[a-z0-9]+)
+    ([A-Z]{1}[a-z0-9]+)?
+    )''', re.VERBOSE)
+
 
 # Create underbar regex
-underRegex = re.compile(r'''(
+underRegex2 = re.compile(r'''(
     ([a-zA-Z0-9]+)       
     (_)                    
-    ([a-zA-Z0-9]+)         
+    ([a-zA-Z0-9]+)
+    (_)?
+    ([a-zA-Z0-9]+)?
+    )''', re.VERBOSE)
+
+# Create underbar regex
+underRegex3 = re.compile(r'''(
+    ([a-zA-Z0-9]+)       
+    (_)                    
+    ([a-zA-Z0-9]+)
+    (_)
+    ([a-zA-Z0-9]+)
     )''', re.VERBOSE)
 
 # Convert underbar   CamelCase -> camel_case
@@ -59,32 +77,70 @@ def convertUnderbar2(word):
         tepms=groups[1].lower() +'_'+groups[2].lower()
     return tepms
 
+def convertUnderbar3(word):
+    tepms=word
+    for groups in camelRegex2.findall(word):
+        tepms=groups[1].upper() +'_'+groups[2].upper()
+        if(len(groups[3]) >0):
+            tepms = tepms +'_'+groups[3].upper()
+    return tepms
+
+
 # Convert camel   camel_case -> camelCase
 def convertCamel(word):
     tepms=word
-    for groups in underRegex.findall(word):
+    for groups in underRegex2.findall(word):
         tepms=groups[1].lower() + groups[3].capitalize()
+        if(len(groups[5]) >0):
+            tepms = tepms + groups[5].capitalize()
+        
     return tepms
 
 # Find matches in clipboard text.
 text = str(pyperclip.paste())
-
+text2 = text
 matches = []
 
 for groups in idRegex.findall(text):
-    matches.append(convertUnderbar2(groups[0])+'\t\t\t\t\t\t'+groups[0])
+#    #matches.append(convertUnderbar2(groups[0])+'\t\t\t\t\t\t'+groups[0])
+    matches.append(groups[0])
 
 for groups in labelRegex.findall(text):
     matches.append(groups[0])    
 
+# caCaCa -> ca_ca_ca
+for groups in camelRegex2.findall(text):
+    text2=text2.replace(groups[0], convertUnderbar3(groups[0]))         #대상을 바꿀
+    #matches.append(convertUnderbar3(groups[0])+'\tString\t\t')  #대상만 뽑을때
+    #print(groups[0]+"=>"+ convertUnderbar3(groups[0]))
+
+# X_X_X  _3 -> caCaCa
+for groups in underRegex2.findall(text):
+    text2=text2.replace(groups[0], convertCamel(groups[0]))
+    #matches.append(convertCamel(groups[0])+'\tString\t\t')
+
+
+def camels():
+    if len(text2) > 0 :
+        pyperclip.copy(text2)
+        pyperclip.paste()  
+    else:
+        print('Not fouund clipboard data')
+
 # Copy results to the clipboard.
-if len(matches) > 0 :
-    pyperclip.copy('\n'.join(matches))
-    pyperclip.paste()
-    #print('Copied to clipboard:')
-    #print('\n'.join(matches))
-else:
-    print('Not found.')
-    
+def idName():
+    if len(matches) > 0 :
+          
+        pyperclip.copy('\n'.join(matches))
+        pyperclip.paste()
+        #print('Copied to clipboard:')
+        #print('\n'.join(matches))
+    else:
+        print('Not found.')
+
+
+#idName()
+
+camels()
 
 ```

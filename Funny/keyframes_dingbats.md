@@ -1,0 +1,41 @@
+
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Pulsing Heart</title>
+    <style media="screen">
+     body{
+       text-align: center;
+     }
+
+    @keyframes pulsing-heart {
+        0% {transform: none;}
+        50% {transform: scale(1.4);}
+        100% {transform: none;}
+    }
+
+    .heart {
+        font-size: 10rem;
+        color: #FF0000;
+    }
+
+    .heart:hover {
+        animation: pulsing-heart .5s infinite;
+        transform-origin: center;
+    }
+    </style>
+  </head>
+  <body>
+   <div>
+    <div class="heart">&hearts;</div> <!--dingbats-->
+    <div class="heart">&#9994;</div> <!--dingbats-->
+    
+   </div>
+  </body>
+</html>
+
+
+```

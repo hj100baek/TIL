@@ -48,9 +48,9 @@ for host in nmscan.all_hosts():
 ###
 
 ======================================================================
-     Scanning Hostname:  www.hostname.com ,IP:  203.249.161.90
+     Scanning Hostname:  www.hostname.com ,IP:  123.222.111.90
 ======================================================================
-Host : 203.249.161.90 (www.hostname.co.kr)
+Host : 123.222.111.90 (www.hostname.co.kr)
 State : up
 Protocol : tcp
 port : 80       state : open

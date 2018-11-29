@@ -46,5 +46,16 @@ for host in nmscan.all_hosts():
 ###
 #  python nmap_scan.py www.hostname.com 30-9000
 ###
+
+======================================================================
+     Scanning Hostname:  www.hostname.com ,IP:  203.249.161.90
+======================================================================
+Host : 203.249.161.90 (www.hostname.co.kr)
+State : up
+Protocol : tcp
+port : 80       state : open
+port : 443      state : open
+======================================================================
+
 ```
 

@@ -5,6 +5,9 @@ Node Package Manager
 ### create package.json command
 npm init
 
+### install package with a package.json 
+npm install
+
 ## uglify-js : JavaScript minifier
 
 #### install

@@ -17,7 +17,7 @@ From anaconda3\Library\bin copy below files and paste them in anaconda3/DLLs
 ```python
 from pytube import YouTube
 #from subprocess import run
-#from moviepy.editor import AudioFileClip
+#from moviepy.editor import AudioFileClip    # pyinstaller 수행시 에러발생해서 아래로 변경
 from moviepy.audio.io.AudioFileClip import AudioFileClip
 from tkinter import *
 from tkinter import ttk

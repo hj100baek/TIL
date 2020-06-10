@@ -13,6 +13,11 @@ From anaconda3\Library\bin copy below files and paste them in anaconda3/DLLs
 -   libcrypto-1_1-x64.dll
 -   libssl-1_1-x64.dll 
 
+실행파일 만들기
+  1) pip install pyinstaller
+  2) pyinstaller toy_pytube.py
+  3) dist폴더에 생성된 exe파일 실행
+
 ```
 ```python
 from pytube import YouTube

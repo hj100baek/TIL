@@ -15,8 +15,14 @@ From anaconda3\Library\bin copy below files and paste them in anaconda3/DLLs
 
 실행파일 만들기
   1) pip install pyinstaller
+  ---- 기본형 (이렇게 하면 exe파일이 다른 폴더에서는 실행안됨)
   2) pyinstaller toy_pytube.py
   3) dist폴더에 생성된 exe파일 실행
+  ---- one-file bundled executable
+  2-1) pyinstaller -F -n toy_pybube_v2 toy_pytube.py   // -F: onefile   -n: NAME
+  
+  
+  
 
 ```
 ```python

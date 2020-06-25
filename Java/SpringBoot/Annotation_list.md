@@ -22,4 +22,21 @@
 
 @Controller, @Repository, @Service 도 사용목적이 구체화된 컴포넌트 
 
+```java
+@Component
+public @interface Service {
+    ….
+}
+
+@Component
+public @interface Repository {
+    ….
+}
+
+@Component
+public @interface Controller {
+    …
+}
+```
+
 

@@ -30,5 +30,30 @@ build lifecycle가 when, how 동안 who, what, where의 선언적 표현이다.
   + __version__ : 네이밍 퍼즐의 마지막 조각. groupId:artifactId가 single 프로젝트를 나타낼수 있지만 프로젝트의 구체화를 표현 할 수 없다.  
               코드가 변경되면 변경된 것들이 version되어 진다. 버전을 분리하기위해 repository에서 사용된다. $M2_REPO/org/codehaus/mojo/my-project/1.0
               
+##### packaging
+```xml
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  ...
+  <packaging>war</packaging>
+  ...
+</project>
+```
+예어서 packaing가 선언되지 않았다면 org.codehaus.mojo:my-project:1.0 이 jar로 패키징 된다.  
+위의 예에서는 war로 선언했으므로 war로 패키징 된다.  
+패키 values는 pom, jar, maven-plugin, ejb, war, ear, rar 가 있다.
 
-  
+#### POM Relationships
+Maven의 강력한 면중 하나는 프로젝트 relationshps를 핸들링하는 것이다.  
+이것은 dependencies, inheritance, aggregation을 포함한다.  
+dependency 관리는 복잡한 것이라는 전통을 가진다.  
+"Jarmaggeddon"는 크고 복잡하게 되어진 dependency tree로써 빠르게 발생한다.  
+"Jar Hell"은 dependencies version이 동일하지 않게 개발되거나 유사한 이름의 jar 사이에 버전충돌이 있다.  
+Maven은 이런 문제들을 해결한다.
+
+
+
+
+

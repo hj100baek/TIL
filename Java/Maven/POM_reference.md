@@ -26,6 +26,9 @@ build lifecycle가 when, how 동안 who, what, where의 선언적 표현이다.
 * Maven 프로젝트에 coordinate sysmtem : 3개 필드
   + groupid : 조직 또는 프로젝트에서 유니크하다. dot 표기가 필수는 아니다. dot 표기가 패키지 구조와 일치하지 않아도 된다.  
               그러나 따르는 것이 좋다.
-  
+  + artifactId : 프로젝트명 
+  + version : 네이밍 퍼즐의 마지막 조각. groupId:artifactId가 single 프로젝트를 나타낼수 있지만 프로젝트의 구체화를 표현 할 수 없다.  
+              코드가 변경되면 변경된 것들이 version되어 진다. 버전을 분리하기위해 repository에서 사용된다. $M2_REPO/org/codehaus/mojo/my-project/1.0
+              
 
   

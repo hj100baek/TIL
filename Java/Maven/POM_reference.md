@@ -53,7 +53,30 @@ dependency 관리는 복잡한 것이라는 전통을 가진다.
 "Jar Hell"은 dependencies version이 동일하지 않게 개발되거나 유사한 이름의 jar 사이에 버전충돌이 있다.  
 Maven은 이런 문제들을 해결한다.
 
-
+##### Dependencies
+POM의 핵심은 dependency이다. 대부분 프로젝트는 빌드하고 실행하기 위해 다른것을 의존한다.  
+Maven이 이 리스트를 모두 관리한다면 큰 이득을 얻는다.  
+Maven은 dependencies를 다운로드하고 링크한다.  
+```
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  ...
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+      <type>jar</type>
+      <scope>test</scope>
+      <optional>true</optional>
+    </dependency>
+    ...
+  </dependencies>
+  ...
+</project>
+```
 
 
 

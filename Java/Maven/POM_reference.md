@@ -117,6 +117,70 @@ packaging type은 parent를 위해 __pom__ 이 요구된다.
 relativePath 요소는 요구되지 않지만 사용된다면  
 프로젝트 parent를 위해 첫번째 검색을 위한 의미로 사용된다.  
 
-객체지향 프로그래밍의 객체 상속과 유사하게 모든 POM은 Super POM을 상속한다.
+객체지향 프로그래밍의 객체 상속과 유사하게 모든 POM은 Super POM을 상속한다.  
+dependencyManagement는 의존 정보를 관리하는 것을 돕기위해 POM에 의해 사용된다.
+
+##### Aggregation
+모듈들을 가진 프로젝트는 multi-module 또는 aggregator project로 알려진다. 모듈들은 그룹으로 수행되는 프로젝트들이다. 
+```xml
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+ 
+  <groupId>org.codehaus.mojo</groupId>
+  <artifactId>my-parent</artifactId>
+  <version>2.0</version>
+  <packaging>pom</packaging>
+ 
+  <modules>
+    <module>my-project</module>
+    <module>another-project</module>
+    <module>third-project/pom-example.xml</module>
+  </modules>
+</project>
+```
+#### Properties
+value placeholder  
+value들은 ${X}를 사용해 POM 내에 어디서나 접근할 수 있다.
+```xml
+<project>
+  ...
+  <properties>
+    <maven.compiler.source>1.7</maven.compiler.source>
+    <maven.compiler.target>1.7</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+  </properties>
+  ...
+</project>
+```
+
+#### Build Settings
+
+##### Build
+build 요소는 개념적으로 두 부분으로 분리된다.   
+build 요소들을 포함하는 BaseBuild type, BaseBuild를 포함하는 Build type
+
+```xml
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  ...
+  <!-- "Project Build" contains more elements than just the BaseBuild set -->
+  <build>...</build>
+ 
+  <profiles>
+    <profile>
+      <!-- "Profile Build" contains a subset of "Project Build"s elements -->
+      <build>...</build>
+    </profile>
+  </profiles>
+</project>
+```
+
+
 
 

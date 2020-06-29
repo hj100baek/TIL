@@ -78,5 +78,45 @@ Maven은 dependencies를 다운로드하고 링크한다.
 </project>
 ```
 
+##### Inheritance
+Maven의 강력한 추가 기능중 하나는 프로젝트 상속 개념이다.  
+Maven은 pom에 명시적으로 프로젝트 상속을 만드는 추가단계를 가진다.
+```xml
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+ 
+  <groupId>org.codehaus.mojo</groupId>
+  <artifactId>my-parent</artifactId>
+  <version>2.0</version>
+  <packaging>pom</packaging>
+</project>
+```
+packaging type은 parent를 위해 __pom__ 이 요구된다.
+
+```xml
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+ 
+  <parent>
+    <groupId>org.codehaus.mojo</groupId>
+    <artifactId>my-parent</artifactId>
+    <version>2.0</version>
+    <relativePath>../my-parent</relativePath>
+  </parent>
+ 
+  <artifactId>my-project</artifactId>
+</project>
+```
+relativePath 요소는 요구되지 않지만 사용된다면  
+프로젝트 parent를 위해 첫번째 검색을 위한 의미로 사용된다.  
+
+객체지향 프로그래밍의 객체 상속과 유사하게 모든 POM은 Super POM을 상속한다.
 
 

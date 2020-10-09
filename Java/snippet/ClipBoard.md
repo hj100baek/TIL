@@ -9,7 +9,8 @@ import java.util.regex.Pattern;
 /*
  * clipBoard로 원하는 문자만 추출하기
  * 원하는 문자열을 ctl+c한 후 소스를 실행하면 console에 결과값이 나타남
- * 
+ * javac ClipBoard
+ * java ClipBoard
  * */
 
 public class ClipBoard {

@@ -105,13 +105,7 @@ public class ClipBoard {
 		 * output , firstUpprFlag == true: aaa AaaBbbb AaaBbbCcc AaaBbbCccDdd
 		 * 
 		 */
-		// 2개의 그룹을 포함한 정규표현식
-		// Pattern groupPattern = Pattern.compile("\\[(\\w+)] = (.+)"); //[name] = value
-		// 와 같은 패턴
-		// Pattern groupPattern = Pattern.compile("\"header\": . \"(text)\": \"(.+)\"");
-		// // "header": { "text": "재고합계" },
-		// Pattern groupPattern = Pattern.compile("\"(fieldName)\"\\s{0,}: \"(\\w+)\"");
-		// // "fieldName" : "abcAmount",
+	
 		Pattern groupPattern = Pattern.compile("(\\w+)"); // 모든 문자
 		Matcher groupMatcher = groupPattern.matcher(text);
 

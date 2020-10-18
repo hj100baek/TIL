@@ -152,7 +152,7 @@ public class ClipBoard {
 	private static void exractConvert4(String text) {
 		System.out.println("exractConvert4()=====================================");
 	    //라인별 마지막 문자열 구하기 
-		Pattern groupPattern = Pattern.compile("\\w+[,]{0,}(?=(\\.?$))|(?i)FROM", Pattern.MULTILINE); // [\\w\\s]+(?=\\.)
+		Pattern groupPattern = Pattern.compile("\\w+[,\\s]{0,}(?=(\\.?$))|(?i)FROM|\\w+[,\\s]{0,} --", Pattern.MULTILINE); // [\\w\\s]+(?=\\.)
 		Matcher groupMatcher = groupPattern.matcher(text);
 
 		// text
@@ -165,6 +165,8 @@ public class ClipBoard {
 			}
 			
 			value = value.toLowerCase().replaceAll(",", "");
+			value = value.toLowerCase().replaceAll(" ", "");
+			value = value.toLowerCase().replaceAll("--", "");
 			
 			//System.out.println(String.format("%s", value));
 			

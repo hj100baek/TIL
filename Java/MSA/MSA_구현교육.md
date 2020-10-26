@@ -20,7 +20,7 @@ Hystrix
 Circuit breaker
 Hystrix is a latency and fault tolerance library designed to isolate points of access to remote systems, services and 3rd party libraries, stop cascading failure and enable resilience in complex distributed systems where failure is inevitable.
 
-APgi Gateway
+AP Gateway
 Channel(폰, PC, 태블릿 등등)과 Service사이에 작동한다.
 
 Service Mesh

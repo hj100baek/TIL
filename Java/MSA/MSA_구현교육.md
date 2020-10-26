@@ -15,4 +15,23 @@ runtime방식의 framework.
 
 spring cloud
 spring f/w와 spring boot를 포함하는 더 큰 개념
+
+Hystrix 
+Circuit breaker
+Hystrix is a latency and fault tolerance library designed to isolate points of access to remote systems, services and 3rd party libraries, stop cascading failure and enable resilience in complex distributed systems where failure is inevitable.
+
+APgi Gateway
+Channel(폰, PC, 태블릿 등등)과 Service사이에 작동한다.
+
+Service Mesh
+MSA서비스들 사이에서 작동한다.(서비스들 사이에 Routing, Discovery, Load Balance, Fail over)
+
+Backing Service
+데이터 처리. 캐시 등등
+
+CI/CD: Deploy, delivery
+
+Telemetry
+Log, Trace, monitoring 등 
+
 ```

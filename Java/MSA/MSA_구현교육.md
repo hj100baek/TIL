@@ -13,4 +13,6 @@ spring boot
 과거의 방식은 작은 개발에도 많은 기본 환경 설정(WAS , Container, Context, web-inf/lib)이 필요.
 runtime방식의 framework.  
 
+spring cloud
+spring f/w와 spring boot를 포함하는 더 큰 개념
 ```

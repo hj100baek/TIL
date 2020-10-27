@@ -26,7 +26,7 @@ EndPoint의 단일화 역할.
 인증/인가 처리가 가능
 
 Service Mesh
-MSA서비스들 사이에서 작동한다.(서비스들 사이에 Routing, Discovery, Load Balance, Fail over)
+MSA서비스들 사이에서 작동한다.(서비스들 사이에 Routing, Discovery-Eureka, Load Balance-Ribbon, Fail over-Hystrix)
 
 Backing Service
 데이터 처리. 캐시 등등

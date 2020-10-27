@@ -27,6 +27,7 @@ EndPoint의 단일화 역할.
 
 Service Mesh
 MSA서비스들 사이에서 작동한다.(서비스들 사이에 Routing, Discovery-Eureka, Load Balance-Ribbon, Fail over-Hystrix)
+최근에는 Eureka보다는 쿠버네티스를 사용한다.
 
 Backing Service
 데이터 처리. 캐시 등등

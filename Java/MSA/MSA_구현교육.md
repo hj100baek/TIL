@@ -37,4 +37,8 @@ CI/CD: Deploy, delivery
 Telemetry
 Log, Trace, monitoring 등 
 
+SAGA패턴
+각 서비스간에 트랜잭션을 http서비스간에 보장할수 없어 보상트랜잭션을 통해 이를 처리한다.
+Orchestration:중재자가 모든 이벤트 순서에 따라 트랜잭션 관리. 미들웨어를 많이 사용한다.
+Choreography:호출한 서비스가 중심이 되어 실패시 실패서비스를 호출해준다. 미들웨어가 없어도 된다.
 ```

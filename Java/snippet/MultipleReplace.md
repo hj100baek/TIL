@@ -35,7 +35,8 @@ public class MultipleReplace {
 		try {
 			Stream<String> stream = Files.lines(Paths.get(findReplacefilePath));
 			findReplaceMap = stream
-					             .filter(d->d.contains(":"))
+					             .filter(s->s.contains(":"))
+						     .map(s -> s.replace(" ", ""))
 					             .collect(Collectors.toMap(k-> String.valueOf(k.split(":")[0]), v->String.valueOf(v.split(":")[1]),
 					            		   (asis, tobe)-> asis));
 			

@@ -15,7 +15,8 @@ Bean을 분리해야 propagation이 제대로 작동하나 봄
                 innerMthod에서 저장이 부분 성공하고, interFaceCall 성공하면 부분성공만 commit;
 //작동 결과 : innerMthod에서 저장이 부분 성공하고, interFaceCall 성공하면 부분성공만 commit을 테스트해 보면
               ineerMthod에 롤백이 되지 않고 innserMethod에 RuntimeException 발생부분전까지가 commit되어 버린다.
-              
+@Service
+@Transactional
 class OuterService {
 
  @Transactional(propagation = Propagation.REQUIRED)
@@ -53,6 +54,8 @@ class OuterService {
 //작동 결과 : innerMthod에서 저장이 부분 성공하고, interFaceCall 성공하면 부분성공 commit을 테스트해 보면
               innserMethod에 RuntimeException이 발생하면 에러 호출은 rollback처리되고
               다음건은 성공되어 commit처리 되고 , 전체 rollback결정은 outer에 의해 처리도됨
+@Service
+@Transactional
 class OuterService {
 
  @Transactional(propagation = Propagation.REQUIRED)
@@ -70,6 +73,8 @@ class OuterService {
       
   }
 }  
+
+@Service
  class OuterSubService {
  
  @Transactional(propagation = Propagation.NESTED, rollbackFor = Exception.class)

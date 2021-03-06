@@ -28,7 +28,12 @@ public class MultipleReplace3 {
 	static LinkedHashMap<String, String> columnMap2 = null;
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		// 파일명을 변수로 받고 싶다면
+		if (args.length == 1) {
+		  targetfileName = args[0];
+		  String targetfilePath = "C:/convertemp/" + targetfileName + ".xml";
+		}
+		
 		readFindReplaceFile();
 		replaceFile();
 	}

@@ -3,6 +3,6 @@
 ###### 거듭제곱
 
 ```math
-a10 = a x a x a
+a3 = a x a x a
 ```
 

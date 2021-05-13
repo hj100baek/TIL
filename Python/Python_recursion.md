@@ -37,4 +37,25 @@ rec([1,2],2)
  ** rcnt:1 item:2
 [1, 2]
 
+
+rec([1,2],3)   
+
+## result
+
+* rcnt:3 item:1
+  * rcnt:2 item:1
+ * rcnt:1 item:1
+ ** rcnt:1 item:2
+  ** rcnt:2 item:2
+ * rcnt:1 item:1
+** rcnt:1 item:2
+   ** rcnt:3 item:2
+  * rcnt:2 item:1
+ * rcnt:1 item:1
+ ** rcnt:1 item:2
+  ** rcnt:2 item:2
+ * rcnt:1 item:1
+ ** rcnt:1 item:2
+
+
 ```

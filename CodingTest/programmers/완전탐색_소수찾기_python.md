@@ -59,7 +59,7 @@ def  findPrime(arrs):
 ######################
 # 2차 풀이
 # 성공 : 100.0/ 100.0
-# 원인: 단순 for문은 안됨. 순열. 재귀함수등을 참고 
+# 원인: 단순 for문은 안됨. 순열. 재귀함수등을 참고 . api는 import하지 않고 시도
 ######################
 
 def generate(chosen, used, arr, r, rsltstr):

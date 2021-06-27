@@ -38,7 +38,9 @@ public class ClipBoard {
 				System.out.println(text);
 
 				// exractConvert(text) ;
-				exractConvert3(text, false, "bulider");
+				//exractConvert3(text, false, "bulider");
+				fresult = exractConvert5(text).toString();
+				System.out.println(fresult);
 
 			} catch (UnsupportedFlavorException e) {
 				System.out.println(e);
@@ -182,6 +184,50 @@ public class ClipBoard {
 		}
 		
 	}	
+	
+	// 쿼리 소문자 변환 
+	private static StringBuffer exractConvert5(String text) {
+		System.out.println("exractConvert5()=====================================");
+		StringBuffer resultBuffer = new StringBuffer();
+		
+		Pattern groupPattern0 = Pattern.compile("((?m)^.*)"); // 라인별
+		Matcher groupMatcher0 = groupPattern0.matcher(text);
+		
+		
+		while (groupMatcher0.find()) {
+			String value0 = groupMatcher0.group(); // 첫번째 그룹에 일치한 문자열을 구함
+			//System.out.println(value0);
+			
+			
+		    //제외할 문자들구하기  - 원상태 유지할 문자들
+			Pattern groupPattern = Pattern.compile("(\\\'\\w*\\\'|\\{\\w*\\})"); 
+			Matcher groupMatcher = groupPattern.matcher(value0);
+
+			String line_value = value0;
+			line_value = line_value.toLowerCase();
+			
+			// text
+			while (groupMatcher.find()) {
+				System.out.println(String.format("%s",  groupMatcher.group(1)));
+				
+				String value = groupMatcher.group(1);  
+				if(value.startsWith("{")) {
+					line_value = line_value.replaceAll("(?i)"+value.substring(1, value.length()-1), value);
+				} else {
+					line_value = line_value.replaceAll("(?i)"+value, value);
+				}
+			
+			}
+			
+			// text
+			System.out.println(String.format("%s", line_value));
+			resultBuffer.append(String.format("%s\n", line_value));
+		}	
+		
+		System.out.println("exractConvert5() end=====================================");
+		return resultBuffer;
+	}	
+	
 	
 
 }

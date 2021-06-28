@@ -25,6 +25,9 @@ Stream.of(1, 2, 3, 4, 5)
 
 - Intermediate Operation method
  + ex) filter , map
+- Terminal Operation method
+ + ex) findFirst
+
 ```java
 class Person
 {
@@ -48,8 +51,3 @@ List<String> names =
               .collect(Collectors.toList());
 
 ```
-
-
-
-- Terminal Operation method
- + ex) findFirst

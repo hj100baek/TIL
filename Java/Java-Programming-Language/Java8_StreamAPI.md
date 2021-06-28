@@ -25,5 +25,31 @@ Stream.of(1, 2, 3, 4, 5)
 
 - Intermediate Operation method
  + ex) filter , map
+```java
+class Person
+{
+    private String name;
+    private String birthDate;
+    public String getName() {
+        return name;
+    }
+    public String getBirthDate() {
+        return birthDate; 
+    }
+    Person(String name) {
+        this.name = name;
+    }
+}
+
+## name 으로만 list 만들고 싶을경우 
+List<String> names = 
+    personList.stream()
+              .map(Person::getName)
+              .collect(Collectors.toList());
+
+```
+
+
+
 - Terminal Operation method
  + ex) findFirst

@@ -1,14 +1,13 @@
 #### Object.assign()
 
 ```javascript
-const target = { a: 1, b: 2 };
-const source = { b: 4, c: 5 };
 
-const returnedTarget = Object.assign(target, source);
+//객체 병합
+const o1 = { a: 1 };
+const o2 = { b: 2 };
+const o3 = { c: 3 };
 
-console.log(target);
-// expected output: Object { a: 1, b: 4, c: 5 }
-
-console.log(returnedTarget);
-// expected output: Object { a: 1, b: 4, c: 5 }
+const obj = Object.assign(o1, o2, o3);
+console.log(obj); // { a: 1, b: 2, c: 3 }
+console.log(o1);  // { a: 1, b: 2, c: 3 }, 대상 객체 자체가 변경됨.
 ```

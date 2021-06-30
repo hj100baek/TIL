@@ -21,5 +21,12 @@
         </selectKey>  
  </insert> 
 
+3) useGeneratedKeys, keyProperty : 자동 생성키를 지원하는 경우 insert 후 key값을 리턴 받을 수 있다.
+ <insert id="insertUser" parameterType="DataClass" useGeneratedKeys="true"   keyProperty="id">
+
+     /* query */
+</insert>
+
+
 
 ``` 

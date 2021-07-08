@@ -26,6 +26,7 @@ public TotalPageSample(Function<T, Page<R>> serviceFunction, int rowSize) {
 /** ROW_SIZE 단위로 전체 페이지 조회
 // T: paging 요청정보를 가지고 있어야 함
 // R: paging 전체 결과 
+*/
 public Page<R> readTableTotalPage(T t) {
   int totRecord = 0;
   Pageable pageable = PageRequest.of(0, this.ROW_SIZE);

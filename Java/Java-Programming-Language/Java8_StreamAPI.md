@@ -36,6 +36,9 @@ class Person
     public String getName() {
         return name;
     }
+     public vodi setName(name) {
+        this.name = name;
+    }
     public String getBirthDate() {
         return birthDate; 
     }
@@ -44,10 +47,27 @@ class Person
     }
 }
 
-## name 으로만 list 만들고 싶을경우 
+// name 으로만 list 만들고 싶을경우 
 List<String> names = 
     personList.stream()
               .map(Person::getName)
               .collect(Collectors.toList());
 
 ```
+
+```java
+// map에서 fucntion 이용 
+Function<Person, Person> fp = x -> {
+  x.setName("change");
+  return x;
+};
+
+List<String> names = 
+    personList.stream()
+              .map(Person::getName)
+              .collect(Collectors.toList());
+
+List<String> names_change = names.stream()
+                                 .map(fp)
+                                 .collect(Collectors.toList());
+

@@ -70,7 +70,7 @@ List<String> names =
 List<String> names_change = names.stream()
                                  .map(fp)
                                  .collect(Collectors.toList());
-
+```
 '''java
 //join
 List<Product> productList = new ArrayList<>();

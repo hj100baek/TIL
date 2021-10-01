@@ -71,3 +71,23 @@ List<String> names_change = names.stream()
                                  .map(fp)
                                  .collect(Collectors.toList());
 
+'''java
+//join
+List<Product> productList = new ArrayList<>();
+productList.add()..
+List<Manufacturer> manfList = new ArrayList<>();
+
+Map<String, Manufacturer> map = manfList.stream().collect(Collectors.toMap(p -> p.getCode(), p->p));
+
+List<ProductManf> list1 = 
+        productList.stream().map(p->
+          ProductManf pmf = new ProductManf();
+          pmf.setId(p.getId());
+          pmf.setProductNm(p.getProudctNm());
+          pmf.setManfCode(p.getManfCode());
+          
+          if (map.containsKey(p.manfCode()) {
+            pmf.setManfNm(map.get(p.manfCode()).getCodeNm());
+          }
+          return pmf;
+       }).collect(Collectors.toList());  

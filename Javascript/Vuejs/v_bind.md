@@ -9,7 +9,7 @@
             <div id="app">
                 <h1>{{ product }}</h1>
                 <p></p>
-                <a v-bind:href="url">{{ url }}</a>
+                <a v-bind:href="url">{{ url }}</a>  // or <a :href="url">{{ url }}</a>
             </div>
             
             

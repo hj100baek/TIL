@@ -80,7 +80,7 @@ List<Manufacturer> manfList = new ArrayList<>();
 Map<String, Manufacturer> map = manfList.stream().collect(Collectors.toMap(p -> p.getCode(), p->p));
 
 List<ProductManf> list1 = 
-        productList.stream().map(p->
+        productList.stream().map(p-> {
           ProductManf pmf = new ProductManf();
           pmf.setId(p.getId());
           pmf.setProductNm(p.getProudctNm());

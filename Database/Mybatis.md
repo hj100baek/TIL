@@ -39,6 +39,11 @@
      values (#{name},#{password}) 
 </insert>
 
-
+4) trim , prefix : 쿼리문에 문자열을 추가 또는 제거해준다.
+update user 
+  <trim prefix="SET"  prefixOverrides="OR">          //set을 넣어준다.  prefixOverrides 쿼리 중에 'OR' 텍스트를 찾고, 찾게 되면 'OR' 텍스트를 제거
+  username=#{username}
+  ,password=#{password}
+  </trim>
 
 ``` 

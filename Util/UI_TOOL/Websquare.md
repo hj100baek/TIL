@@ -1,6 +1,7 @@
-```text
 
-[그리드 관련]
+
+### 그리드
+```text
   - 상태 변경 예외 처리
     바인딩된 dataList에 컬럼 속성 ignoreStatus = "true" 설정
     
@@ -13,3 +14,40 @@
 
 
 ```
+
+### DataCollection
+```javascript
+// createDataMap 
+cf.data.createDataMap = function(scwin, dsId, colArr, typeArr, otpions) {
+  try {
+   var dtlObj = cf.util.GetComponent(scwin, dsId);
+   
+   var colInfoJSON = [];
+   for (var i=0; i < colArr.length; i++){
+  
+     var colInfo = {
+       "id" : colArr[i],
+       "type" : typeArr[i],
+       "name" : colArr[i]
+     };
+     
+     colInfoJSON.push(colInfo);
+     var dataCollectionJSON = {
+        "id": dsId,
+        "type" : "dataMap",
+        "option" : {
+           "baseNode" : options.baseNode || "map"
+        }, 
+        "keyInfo" : colInfoJSON
+     };
+     
+     scwin.$w.data.create(dataCollectionJSON);
+     
+   }
+  } catch (ex) {
+     console.error(`create map error : ${ex}`);
+  }
+}
+
+```
+

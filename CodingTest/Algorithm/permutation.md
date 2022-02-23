@@ -8,8 +8,8 @@ public class PremutationTest {
 
 	public static void main(String[] args) {
 		String str = "ABC";
-		int depth = 0;
-		permutations("", str, depth);
+		int choose = 0;
+		permutations("", str, choose);
 	}
 	
 	public static void permutations(String target, String source, int choose) {

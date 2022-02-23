@@ -1,6 +1,7 @@
 ### permutation(순열)
 #### 서로 다른 n개의 원소에서 r개를 중복없이 순서에 상관있게 선택하는 혹은 나열하는 것
 #### 순서도 중요하다. {1, 2, 3}와 {1, 3, 2}는 순서가 다르기 때문에 다른 값이다.
+#### 재귀함수를 사용한다.
 
 ```java
 public class PremutationTest {
@@ -22,9 +23,9 @@ public class PremutationTest {
 		}
 		
 		for (int i=0; i < source.length(); i++) {
-			String newTarget = target + source.charAt(i);
+			String newTarget = target + source.charAt(i);  // 누적된 기준값 + 원본 source에서 choose값
 			System.out.println("======newTarget"+i +"==="+newTarget);
-			String newSource = source.substring(0, i) + source.substring(i+1);
+			String newSource = source.substring(0, i) + source.substring(i+1);  //원본 source에서 choose값을 제외한 나머지들
 			System.out.println("======newSource"+i +"==="+newSource);
 			
 			

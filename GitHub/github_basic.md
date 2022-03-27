@@ -21,6 +21,23 @@
      git config --global user.email "email@example.com"
      git config --global user.email
   ```
+  
+  * ### git remote 설정 :
+  1)  리모트 저장소 추가 (워킹 디렉토리에 새 리모트 저장소 추가)
+  ```
+     git remote add <단축이름> <url>
+     git remote add origin https://github.com/xxx/test-gitproject.git
+     
+  ```
+  2)  branch 설정
+  ```
+     git branch -M main
+  ```
+  3)  push 
+  ```
+     git push -u origin main
+     git push <리모트 저장소 이름> <브랜치 이름>
+  ```
 
  * #### commit :
 

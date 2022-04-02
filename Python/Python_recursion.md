@@ -59,4 +59,3 @@ rec([1,2],3)
 
 
 
-![rur2](https://user-images.githubusercontent.com/7253111/161381723-271bc9f3-41c5-4ec7-8be1-f693c48d261d.png)

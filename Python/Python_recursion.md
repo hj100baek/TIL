@@ -58,5 +58,4 @@ rec([1,2],3)
  ** rcnt:1 item:2
 
 
-
-![rur2](https://user-images.githubusercontent.com/7253111/161381746-56382d9d-9a7e-436a-a176-83e002d95074.png)
+![rec2](https://user-images.githubusercontent.com/7253111/161381746-56382d9d-9a7e-436a-a176-83e002d95074.png) 

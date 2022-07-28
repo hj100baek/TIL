@@ -1,5 +1,4 @@
 ```java
-package com.devb.test;
 
 /**
  * 결과 : 60/ 100
@@ -118,7 +117,8 @@ public class KeyPad {
 ```java
 /**
  * 결과 : 100/ 100
- * 원인: 2차원적 접근. X축(1~3)과 Y축(1~4) 의 차이를 모두 구해서 차이를 
+ * 원인: 2차원적 접근. X축(1~3)과 Y축(1~4) 의 차이를 모두 구해서 차이를 구함
+  */ 
 public class KeyPad2 {
 	public static void main(String[] args) {
 		

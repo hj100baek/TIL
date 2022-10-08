@@ -83,6 +83,8 @@ public class CheesePizza implements Pizza {
 
 }
 
-
+```
+```java
+// 2) ServiceLocatorFactoryBean 을 이용한 방식
 
 ```

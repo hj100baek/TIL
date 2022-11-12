@@ -1,4 +1,6 @@
 #### HttpServletResponse
+##### Defines an object to assist a servlet in sending a response to the client.
+##### to provide HTTP-specific functionality in sending a response
 ```java
 protected void service(
 			HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException{

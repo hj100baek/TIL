@@ -21,4 +21,19 @@ public void setVal(Object object) throws Exception {
        }
     }
 }
+
+//string type trim
+public static <T> void setVoTirm(T object) {
+    Class cls = object.getClass();
+    Arrays.stream(cls.getDeclaredFields()).forEach(f -> {
+      try {
+          f.setAccessible(true);
+          if (f.get(object).getClass().equals(String.class) && f.get(object) != null) {
+              f.set(object, f.get(object).toString().trim());
+          }
+          f.setAccessible(false);
+      } catch (IllegalAccessException e) {
+        e.printStackTrace();
+      }
+}
 ```

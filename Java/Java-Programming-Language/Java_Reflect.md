@@ -23,7 +23,7 @@ public void setVal(Object object) throws Exception {
 }
 
 //string type trim
-public static <T> void setVoTirm(T object) {
+public static <T> void setVoTrim(T object) {
     Class cls = object.getClass();
     Arrays.stream(cls.getDeclaredFields()).forEach(f -> {
       try {
@@ -35,5 +35,7 @@ public static <T> void setVoTirm(T object) {
       } catch (IllegalAccessException e) {
         e.printStackTrace();
       }
+    });  
+       
 }
 ```

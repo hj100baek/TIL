@@ -18,3 +18,46 @@ spring:
 server:
     address: 192.168.1.120
 ```
+####  [ 사용자 정의 yml 설정 ]
+##### 참고: https://www.baeldung.com/spring-yaml-propertysource
+
+```yml
+config:
+    services:
+        - 
+            name:  name1
+            id: aaa
+         - 
+            name: name2
+            id: bbb
+```
+
+```java
+@Configuration
+@ConfigurationProperties(prefix = "config")
+@PropertySource(value = "classpath:foo.yml", factory = YamlPropertySourceFactory.class)
+@Data
+public class YamlFooProperties {
+
+    private List<Item> services;
+
+    public String getItemId(Stirng name) {
+      Item item = services.stream.filter(item -> name.equals(item.getName())).findFirst().orElse(null);
+      return item.getId();
+    }
+    
+    @Data
+     public static class Item {
+        private String name;
+        private String id;
+     }
+}
+
+// 사용
+@Service
+public class UserService {
+   private YamlFooProperties yamlFooProperties;
+...
+}
+
+```

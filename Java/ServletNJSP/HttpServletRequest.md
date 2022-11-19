@@ -5,7 +5,7 @@
 * getParameterNames :  parameter 이름들을 Enumeration<java.lang.String> 으로 리턴
 * getParameterValues : parameter명이 같은 값을 String 배열로 리턴
 * getParameterMap : parameter들을 Map으로 리턴
-``
+```
 
 ```java
 private static Map<String, List<String>> getParams(HttpServletRequest req) {

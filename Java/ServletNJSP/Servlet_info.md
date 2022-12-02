@@ -12,3 +12,4 @@
 ##### A servlet context is used to maintain state information for all instances of a Web application within any single JVM 
 ##### (that is, for all servlet and JSP page instances that are part of the Web application)
 ##### There is usually one servlet context for each Web application running within a given JVM
+##### ServletContext is the object Servlet Container used to share initial values (data) or configuration information with the entire application. 

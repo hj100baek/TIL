@@ -5,7 +5,7 @@
 ex) a.py
 
 class Node:
-    def __init__(self, key):
+    def __init__(self, key):  #__init__()는 새로 생성된 클래스 인스턴스를 위해 클래스 초기화시 자동 호출됨
       self.key = key
  
  

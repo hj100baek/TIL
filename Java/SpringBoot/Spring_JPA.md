@@ -17,3 +17,10 @@
 테이블 : 외래키로 연관관계 (JOIN)
           양방향
 ```
+
+##### JPQL
+```txt
+JPQL : Java Persistence Query Language
+엔티티 객체를 조회하는 객체지향 쿼리
+SQL을 추상화해서 특정 db에 의존하지 않음
+```

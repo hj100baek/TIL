@@ -72,3 +72,13 @@ public class HomeControllerSliceTest {
 	}
 }
 ```
+
+### @RunWith(SpringRunner.class)
+##### Spring TestContext Framework을 사용한 테스트를 실행한다.
+```
+   
+```
+
+### @DataJpaTest
+##### JPA applications을 테스트하기 위해 사용한다. 
+##### @Component and @ConfigurationProperties  beans는 scan되지 않는다!  그래서 @Service가 scan되지 않으므로 @Service를  테스트하고 싶다면 @SpringBootTest를 사용

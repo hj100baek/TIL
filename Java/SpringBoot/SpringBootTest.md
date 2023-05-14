@@ -98,3 +98,26 @@ class MyNonTransactionalTests {
     
 }  
 ```
+### @Test - Expected Exception
+##### 예상되는 Exception을 테스트하는 경우 Junit 4와  Junit 5에 차이가 있음으로 주의
+```
+//Junit4
+@Test(expected = IllegalStateException.class)
+public void memberDup() throws Exception {
+    // ... 
+}  
+
+//Junit5
+@Test
+public void memberDup() throws Exception {
+
+	IllegalStateException thrown = Assertions.assertThrows(IllegalStateException.class, () -> {
+		Member member = new Member();
+		member.setName("kim");
+
+		memberService.join(member);
+	});
+
+	Assertions.assertEquals("이미 존재하는 회원입니다.", thrown.getMessage());
+}
+```

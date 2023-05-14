@@ -1,4 +1,5 @@
-[참고: SpringBoot Testing]([https://link-url-here.org](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#features.testing))
+참고 : SrpingBoot Testing
+[https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#features.testing](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#features.testing)
 ### @SpringBootTest
 ##### 테스트에 적합한 ApplicationContext 을 생성한다.
 ```java

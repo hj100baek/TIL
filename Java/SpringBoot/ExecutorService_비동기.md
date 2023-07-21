@@ -33,6 +33,22 @@ public class MyService {
       }
     });
 
+     executorService.shutdown();
+
+   try {
+          boolean terminated = executorService.awaitTermination(1, TimeUnit.SECONDS);
+          if (!terminated) {
+            executorService.shutdownNow();
+          }
+        } catch (InterruptedException | ExecutionException | TimeoutException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            executorService.shutdownNow();
+        } finally {
+      executorService.shutdownNow();
+    }
+
+
     // return deferredResult;
     // return "OK";
   }

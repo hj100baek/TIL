@@ -40,7 +40,7 @@ public class MyService {
           if (!terminated) {
             executorService.shutdownNow();
           }
-        } catch (InterruptedException | ExecutionException | TimeoutException e) {
+        } catch (InterruptedException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
             executorService.shutdownNow();

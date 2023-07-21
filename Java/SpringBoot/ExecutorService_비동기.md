@@ -35,8 +35,8 @@ public class MyService {
 
      executorService.shutdown();
 
-   try {
-          boolean terminated = executorService.awaitTermination(1, TimeUnit.SECONDS);
+   try {          
+          boolean terminated = executorService.awaitTermination(100, TimeUnit.MILLISECONDS);
           if (!terminated) {
             executorService.shutdownNow();
           }
@@ -44,9 +44,7 @@ public class MyService {
             // TODO Auto-generated catch block
             e.printStackTrace();
             executorService.shutdownNow();
-        } finally {
-      executorService.shutdownNow();
-    }
+        }
 
 
     // return deferredResult;

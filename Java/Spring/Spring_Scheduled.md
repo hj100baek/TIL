@@ -32,3 +32,32 @@ public class MyController {
     }
 }
 ```
+```
+@Controller
+public class MyController {
+
+    @Autowired
+    private TaskScheduler taskScheduler;
+
+    @RequestMapping("/start")
+    public String start() {
+        taskScheduler.scheduleAtFixedRate(new Runnable() {
+            @Override
+            public void run() {
+                // do something
+            }
+        }, 0, 1, TimeUnit.SECONDS);
+
+        return "index";
+    }
+
+    @RequestMapping("/stop")
+    public String stop() {
+        if (taskScheduler != null) {
+            taskScheduler.shutdown();
+        }
+
+        return "index";
+    }
+}
+```

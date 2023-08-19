@@ -4,7 +4,7 @@ https://stackoverflow.com/questions/23996173/spring-scheduled-task-triggered-thr
 https://github.com/Charlynux/task-scheduling/tree/master/src/main/java/demo
 ```
 ```java
-Controller
+@Controller
 public class MyController {
 
     private ScheduledExecutorService executorService;

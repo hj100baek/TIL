@@ -32,7 +32,7 @@ public class MyController {
     }
 }
 ```
-```
+```java
 @Controller
 public class MyController {
 

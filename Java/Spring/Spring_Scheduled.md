@@ -2,6 +2,7 @@
 ```
 https://stackoverflow.com/questions/23996173/spring-scheduled-task-triggered-through-the-controller-and-websocket
 https://github.com/Charlynux/task-scheduling/tree/master/src/main/java/demo
+https://riteshshergill.medium.com/dynamic-task-scheduling-with-spring-boot-6197e66fec42
 ```
 ```java
 @Controller

@@ -9,6 +9,16 @@ dependencies :
  Spring Web ,thymeleaf, Spring Data JPA, H2 Database, Spring Boot DevTools
 
 ```
+``` txt
+ [삽질 에러들]
+1. @Entity  인식이안됨
+ => pom.xml  all-open 추가
+
+2. org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource
+   (every '@Entity' class must declare or inherit at least one '@Id' or '@EmbeddedId' property)
+  => @Entity에 @Id @GeneratedValue var id: Long? = null 추가 
+```
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"

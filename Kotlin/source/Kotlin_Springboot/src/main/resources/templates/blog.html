@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<div th:replace="~{header :: header}"></div>
+<body>
+<h1 th:text="${title}"></h1>
+
+<div class="articles">
+    <th:block th:each="article : ${articles}">
+        <section class="article">
+            <header class="article-header">
+                <a th:href="@{'/article/'+${article.slug}}"> <h2 class="article-title" th:text="${article.title}"></h2></a>
+                <div class="article-meta">By  <strong th:text="${article.author.firstname}"></strong>, on <strong th:text="${article.addedAt}"></strong></div>
+            </header>
+            <div class="article-description"  th:text="${article.headline}">
+            </div>
+        </section>
+    </th:block>
+
+    <section>
+        <header class="banner">
+            <h2 class="banner-title" th:text="${banner.title}"></h2>
+        </header>
+        <div class="banner-content" th:text="${banner.content}">
+        </div>
+    </section>
+</div>
+
+<div th:replace="~{footer :: footer}"></div>
+</body>
+</html>

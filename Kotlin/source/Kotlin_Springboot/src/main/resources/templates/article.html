@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<div th:replace="~{header :: header}"></div>
+<body>
+
+<div class="articles">
+
+        <section class="article">
+            <header class="article-header">
+                <h2 class="article-title" th:text="${article.title}"></h2>
+                <div class="article-meta">By  <strong th:text="${article.author.firstname}"></strong>, on <strong th:text="${article.addedAt}"></strong></div>
+            </header>
+
+            <div class="article-description"  th:text="${article.headline}+' '+${article.content}"></div>
+        </section>
+
+</div>
+
+<div th:replace="~{footer :: footer}"></div>
+</body>
+</html>

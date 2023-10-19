@@ -1,4 +1,7 @@
 ###
+참고
+  https://www.toptal.com/spring/spring-security-tutorial
+  
 ```java
 @Configuration
 @EnableConfigurationProperties(RedisProperties.class)

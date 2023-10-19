@@ -1,6 +1,7 @@
 ###
 참고
-  https://www.toptal.com/spring/spring-security-tutorial
+  https://www.toptal.com/spring/spring-security-tutorial <br/>
+  https://stackoverflow.com/questions/72381114/spring-security-upgrading-the-deprecated-websecurityconfigureradapter-in-spring
   
 ```java
 @Configuration

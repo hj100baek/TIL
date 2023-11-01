@@ -11,4 +11,5 @@
 
 
 https://www.baeldung.com/spring-mvc-handlerinterceptor-vs-filter <br/>
-https://medium.com/javarevisited/spring-framework-filter-vs-dispatcher-servlet-vs-interceptor-vs-controller-745aa34b08d8
+https://medium.com/javarevisited/spring-framework-filter-vs-dispatcher-servlet-vs-interceptor-vs-controller-745aa34b08d8 <br/>
+https://docs.spring.io/spring-security/reference/servlet/architecture.html

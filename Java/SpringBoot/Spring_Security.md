@@ -26,3 +26,5 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 #### CSRF (Cross Site Request Forgery)
 ```
 ```
+
+https://docs.spring.io/spring-security/reference/servlet/architecture.html

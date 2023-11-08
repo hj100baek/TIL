@@ -40,3 +40,19 @@ public @interface Controller {
 ```
 
 
+### @RestControllerAdvice
+ExceptionHandler가  global하게 적용되게 할 수 있다.
+
+```java
+@RestControllerAdvice
+public class CustExceptionHandler {
+  
+  @ExceptionHandler(value = RuntimeException.class)
+	  public ResponseEntity<?> runtimeExceptionHandler(RuntimeException ex) {
+		 return ResponseEntity.status(HttpStatus.CONFLICT)
+				 .body(ex.getMessage());
+	 }
+}
+```
+
+

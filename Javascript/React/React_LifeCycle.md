@@ -20,6 +20,7 @@ componentDidUpdate () : updating이 발생 된 후 즉시 호출된다.
 
 ##### 함수에서 Lifecycle
 함수형 Component에서는 hook을 이용함
+useEffect(이펙트함수, 의존성 배열);
 ```
  useEffect(() => {
    //컴포넌트 렌더링 후에 실행

@@ -4,7 +4,7 @@
 ReactDOM.render() : React 애플리케이션이 시작될 때,최초의 렌더링을 수행,
                     React 엘리먼트를 가상 DOM에 렌더링하고, 이후에 실제 DOM에 반영
 
- // 최초 mouting
+ // 최초 mouting :  컴포넌트가 처음으로 생성되고 실제 DOM에 추가되는 과정
 componentWillMount (): mounting이 발생하기 전에 호출된다. UNSAFE
 render () : Virtual DOM node를 반환한다.
 componentDidMount () : 컴포넌트가 마운트(inserted into the tree) 된 후 즉시 호출된다.

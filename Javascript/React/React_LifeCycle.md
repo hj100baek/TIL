@@ -17,3 +17,21 @@ render () : Virtual DOM node를 반환한다.
 componentDidUpdate () : updating이 발생 된 후 즉시 호출된다. 
 
 ```
+
+##### 함수에서 Lifecycle
+함수형 Component에서는 hook을 이용함
+```
+ useEffect(() => {
+   //컴포넌트 렌더링 후에 실행
+    const connection = createConnection(serverUrl, roomId);
+    connection.connect();
+
+   // 정리(clean-up) 함수 반환 (선택적)
+    return () => {   
+      connection.disconnect();
+    };
+  }, [serverUrl, roomId]);
+    //[] 의존성 배열 : 이 배열에 포함된 상태나 속성이 변경될 때마다 useEffect가 재실행됨
+                       빈 배열 []을 전달하면, useEffect는 컴포넌트가 처음 마운트될 때만 실행
+
+```
